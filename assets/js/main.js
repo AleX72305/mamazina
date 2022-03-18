@@ -1,13 +1,11 @@
-$(function () {
+(function ($) {
 
-	$('.slider-card').slick({
-		// arrows: true,
-		infinite: two,
-		slidesToShow: 3,
+	$('.home-slider').slick({
+		arrows: false,
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
 		slidesToScroll: 1,
-		appendArrows: $('.slider-navigation'),
-		prevArrow: '<span class="prev"></span>',
-		nextArrow: '<span class="next"></span>'
 	});
 
-});
+})(jQuery);

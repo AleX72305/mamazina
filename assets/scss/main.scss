@@ -1,3 +1,7 @@
+// slider 
+@import './part/slick-theme.scss';
+@import './part/slick.scss';
+
 // Общие файлы
 @import './general/reset';
 @import './general/general';
@@ -5,5 +9,7 @@
 // Куски кода
 
 
+
 // Страницы сайта
+@import './page/desctop';
 @import './page/home';

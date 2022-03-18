@@ -11,3 +11,14 @@ body {
 	max-width: 1370px;
 	margin: 0 auto;
 }
+
+.slick-dots li button:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-color: #202020;
+	border-radius: 20px;
+}
+.slick-dots {
+	bottom: 30px;
+}
