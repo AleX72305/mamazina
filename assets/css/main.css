@@ -578,6 +578,8 @@ header .header-menu .menu-btn button:hover {
 .rectangle .wrapper .bloks .blok .blok-text .graph span {
   color: #353b37;
   padding-left: 5px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .rectangle .wrapper .bloks .blok .blok-text button {
@@ -594,16 +596,12 @@ header .header-menu .menu-btn button:hover {
   border: 2px solid #8dc63f;
   bottom: 20px;
   width: 320px;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 
 .rectangle .wrapper .bloks .blok .blok-text button:hover {
   border: 2px solid #8dc63f;
   background-color: #ffffff;
   color: #8dc63f;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
 }
 
 .rectangle .wrapper .benefits {
@@ -744,7 +742,7 @@ header .header-menu .menu-btn button:hover {
   display: flex;
 }
 
-.rectangle .wrapper .label input[type=text] {
+.rectangle .wrapper .label input[type="text"] {
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
@@ -909,6 +907,244 @@ footer .wrapper .footer-info p {
   line-height: 14px;
   letter-spacing: 0.05em;
   color: #a7a7a7;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 900;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.popup.popup-password-recovery.active {
+  display: block;
+}
+
+.popup.popup-payment {
+  display: block;
+}
+
+.popup .popup-dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 70px auto;
+  position: relative;
+  width: 100%;
+}
+
+.popup .popup-content {
+  position: relative;
+  background: #ffffff;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 440px;
+  background-image: url(./img/right-bottom.svg);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.popup .popup-content .popup-close {
+  background: #2D2D2D;
+  border-radius: 50%;
+  position: absolute;
+  right: 27px;
+  top: 27px;
+  width: 33px;
+  height: 33px;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  border: 4px solid #fff;
+}
+
+.popup .popup-content .popup-close:hover {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  border: 4px solid #2D2D2D;
+}
+
+.popup .popup-content .popup-close:active {
+  background-color: #8dc63f;
+}
+
+.popup .popup-content .popup-close span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #323534;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.popup .popup-content .popup-close .top-line {
+  -webkit-transform: rotate(45deg) translate(11px, 5px);
+          transform: rotate(45deg) translate(11px, 5px);
+  background-color: #fff;
+}
+
+.popup .popup-content .popup-close .bottom-line {
+  -webkit-transform: rotate(-45deg) translate(-4px, 9px);
+          transform: rotate(-45deg) translate(-4px, 9px);
+  background-color: #fff;
+}
+
+.popup .popup-content .form-popup {
+  padding: 40px 30px 30px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.popup .popup-content .form-popup.form-popup-payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.popup .popup-content .form-popup.form-popup-payment .icon {
+  margin-bottom: 15px;
+}
+
+.popup .popup-content .form-popup.form-popup-payment .icon svg {
+  width: 67px;
+}
+
+.popup .popup-content .form-popup.form-popup-payment .title-popup {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+}
+
+.popup .popup-content .form-popup.form-popup-payment .sub-title-popup {
+  font-size: 19px;
+  line-height: 26px;
+  text-align: center;
+  color: #16161b;
+}
+
+.popup .popup-content .form-popup .title-popup {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  color: #212b25;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+
+.popup .popup-content .form-popup form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popup .popup-content .form-popup form label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.popup .popup-content .form-popup form input {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+  border-bottom: 1px solid #bdbdbd;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+}
+
+.popup .popup-content .form-popup form button {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 10px 0;
+  background: #8dc63f;
+  border-radius: 20px;
+  border: 2px solid #8dc63f;
+  width: 320px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  margin-bottom: 8px;
+}
+
+.popup .popup-content .form-popup form button:hover {
+  border: 2px solid #8dc63f;
+  background-color: #ffffff;
+  color: #8dc63f;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.popup .popup-content .form-popup form .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup .popup-content .form-popup form .label input {
+  margin-right: 10px;
+}
+
+.popup .popup-content .form-popup form .label p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #000;
+}
+
+.popup .popup-content .form-popup form .label p a {
+  color: #d94f36;
+}
+
+.popup .popup-content .form-popup form .label p a:hover {
+  text-decoration: underline;
+}
+
+.popup .popup-content .form-popup .subtitle-popup {
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 20px;
+  color: #16161b;
 }
 
 .top-menu {

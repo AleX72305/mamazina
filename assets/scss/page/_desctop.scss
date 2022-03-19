@@ -32,7 +32,6 @@ header {
 						color: #2d2d2d;
 						&:hover {
 							color: #d94f36;
-							$transition: all 300ms ease;
 							transition: $transition;
 						}
 					}
@@ -67,7 +66,6 @@ header {
 				}
 				&:hover {
 					background: #f8f8f8;
-					$transition: all 300ms ease;
 					transition: $transition;
 				}
 			}
@@ -191,6 +189,7 @@ header {
 						span {
 							color: #353b37;
 							padding-left: 5px;
+							transition: $transition;
 						}
 					}
 					button {
@@ -207,14 +206,11 @@ header {
 						border: 2px solid #8dc63f;
 						bottom: 20px;
 						width: 320px;
-						$transition: all 300ms ease;
-						transition: $transition;
+
 						&:hover {
 							border: 2px solid #8dc63f;
 							background-color: #ffffff;
 							color: #8dc63f;
-							$transition: all 300ms ease;
-							transition: $transition;
 						}
 					}
 				}
@@ -303,9 +299,6 @@ header {
 				padding-bottom: 10px;
 				border-bottom: 1px solid #bdbdbd;
 				margin-bottom: 20px;
-				// &:hover {
-				// 	color: #000000;
-				// }
 			}
 		}
 		button {
@@ -319,20 +312,18 @@ header {
 			border-radius: 20px;
 			border: 2px solid #8dc63f;
 			width: 320px;
-			$transition: all 300ms ease;
 			transition: $transition;
 			margin-top: 12px;
 			&:hover {
 				border: 2px solid #8dc63f;
 				background-color: #ffffff;
 				color: #8dc63f;
-				$transition: all 300ms ease;
 				transition: $transition;
 			}
 		}
 		.label {
 			display: flex;
-			input[type=text] {
+			input[type="text"] {
 				border-radius: 50%;
 				text-align: center;
 				cursor: pointer;
@@ -462,6 +453,146 @@ footer {
 				line-height: 14px;
 				letter-spacing: 0.05em;
 				color: #a7a7a7;
+			}
+		}
+	}
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 900;
+	overflow-y: scroll;
+	background: rgba(0, 0, 0, 0.3);
+	.popup-dialog {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 70px auto;
+		position: relative;
+		width: 100%;
+	}
+	.popup-content {
+		position: relative;
+		background: #ffffff;
+		border-radius: 30px;
+		width: 100%;
+		max-width: 440px;
+		background-image: url(./img/right-bottom.svg);
+		background-position: right bottom;
+		background-repeat: no-repeat;
+		.popup-close {
+			background: #2D2D2D;
+			border-radius: 50%;
+			position: absolute;
+			right: 27px;
+			top: 27px;
+			width: 33px;
+			height: 33px;
+			z-index: 100;
+			cursor: pointer;
+			transition: $transition;
+			border: 4px solid #fff;
+			&:hover {
+				transition: $transition;
+				border: 4px solid #2D2D2D;
+			}
+			&:active {
+				background-color: #8dc63f;
+			}
+			span {
+				display: block;
+				width: 18px;
+				height: 1.5px;
+				background: #323534;
+				transition: all 0.1s ease;
+			}
+			.top-line {
+				transform: rotate(45deg) translate(11px, 5px);
+				background-color: #fff;
+			}
+			.bottom-line {
+				transform: rotate(-45deg) translate(-4px, 9px);
+				background-color: #fff;
+			}
+		}
+		.form-popup {
+			padding: 40px 30px 30px 30px;
+			box-sizing: border-box;
+			position: relative;
+			.title-popup {
+				font-weight: 400;
+				font-size: 28px;
+				line-height: 33px;
+				color: #212b25;
+				margin-top: 40px;
+				margin-bottom: 8px;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				label {
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 19px;
+					color: #000;
+					margin-bottom: 15px;
+				}
+				input {
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 16px;
+					color: #000;
+					border-bottom: 1px solid #bdbdbd;
+					margin-bottom: 40px;
+					padding-bottom: 10px;
+				}
+				button {
+					cursor: pointer;
+					font-weight: 500;
+					font-size: 16px;
+					line-height: 19px;
+					color: #ffffff;
+					padding: 10px 0;
+					background: #8dc63f;
+					border-radius: 20px;
+					border: 2px solid #8dc63f;
+					width: 320px;
+					transition: $transition;
+					margin-bottom: 8px;
+					&:hover {
+						border: 2px solid #8dc63f;
+						background-color: #ffffff;
+						color: #8dc63f;
+						transition: $transition;
+					}
+				}
+				.label {
+					display: flex;
+					width: 100%;
+					max-width: 240px;
+					align-items: center;
+					input {
+						margin-right: 10px;
+					}
+					p {
+						font-weight: 400;
+						font-size: 12px;
+						line-height: 150%;
+						color: #000;
+						a {
+							color: #d94f36;
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
